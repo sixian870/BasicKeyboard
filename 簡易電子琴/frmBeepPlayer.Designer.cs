@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.palMain = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblOctave = new System.Windows.Forms.Label();
             this.lblInsps = new System.Windows.Forms.Label();
             this.lblInstrument = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.palMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbOctave)).BeginInit();
             this.SuspendLayout();
@@ -113,10 +113,21 @@
             this.palMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.palMain.Font = new System.Drawing.Font("Bell MT", 10F, System.Drawing.FontStyle.Italic);
             this.palMain.Location = new System.Drawing.Point(0, 0);
-            this.palMain.Margin = new System.Windows.Forms.Padding(2);
+            this.palMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.palMain.Name = "palMain";
-            this.palMain.Size = new System.Drawing.Size(987, 220);
+            this.palMain.Size = new System.Drawing.Size(985, 220);
             this.palMain.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(789, 183);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "F1:鋼琴,F2:吉他,F3:小提琴,F4:小號";
             // 
             // lblOctave
             // 
@@ -228,7 +239,7 @@
             this.btn22.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn22.Location = new System.Drawing.Point(647, 1);
-            this.btn22.Margin = new System.Windows.Forms.Padding(2);
+            this.btn22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn22.Name = "btn22";
             this.btn22.Size = new System.Drawing.Size(30, 128);
             this.btn22.TabIndex = 0;
@@ -254,7 +265,7 @@
             this.btn20.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn20.Location = new System.Drawing.Point(596, 1);
-            this.btn20.Margin = new System.Windows.Forms.Padding(2);
+            this.btn20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn20.Name = "btn20";
             this.btn20.Size = new System.Drawing.Size(30, 128);
             this.btn20.TabIndex = 0;
@@ -270,7 +281,7 @@
             this.btn18.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn18.Location = new System.Drawing.Point(545, 0);
-            this.btn18.Margin = new System.Windows.Forms.Padding(2);
+            this.btn18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn18.Name = "btn18";
             this.btn18.Size = new System.Drawing.Size(30, 129);
             this.btn18.TabIndex = 0;
@@ -286,7 +297,7 @@
             this.btn15.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn15.Location = new System.Drawing.Point(443, 1);
-            this.btn15.Margin = new System.Windows.Forms.Padding(2);
+            this.btn15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(30, 128);
             this.btn15.TabIndex = 0;
@@ -302,7 +313,7 @@
             this.btn13.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn13.Location = new System.Drawing.Point(392, 1);
-            this.btn13.Margin = new System.Windows.Forms.Padding(2);
+            this.btn13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn13.Name = "btn13";
             this.btn13.Size = new System.Drawing.Size(30, 128);
             this.btn13.TabIndex = 0;
@@ -316,7 +327,7 @@
             this.btn24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn24.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn24.Location = new System.Drawing.Point(714, 0);
-            this.btn24.Margin = new System.Windows.Forms.Padding(2);
+            this.btn24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn24.Name = "btn24";
             this.btn24.Size = new System.Drawing.Size(50, 220);
             this.btn24.TabIndex = 0;
@@ -327,24 +338,25 @@
             // 
             // btn23
             // 
+            this.btn23.BackColor = System.Drawing.SystemColors.Window;
             this.btn23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn23.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn23.Location = new System.Drawing.Point(663, 0);
-            this.btn23.Margin = new System.Windows.Forms.Padding(2);
+            this.btn23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn23.Name = "btn23";
             this.btn23.Size = new System.Drawing.Size(50, 220);
             this.btn23.TabIndex = 0;
             this.btn23.Tag = "23";
             this.btn23.Text = "Si";
             this.btn23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn23.UseVisualStyleBackColor = true;
+            this.btn23.UseVisualStyleBackColor = false;
             // 
             // btn21
             // 
             this.btn21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn21.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn21.Location = new System.Drawing.Point(612, 0);
-            this.btn21.Margin = new System.Windows.Forms.Padding(2);
+            this.btn21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn21.Name = "btn21";
             this.btn21.Size = new System.Drawing.Size(50, 220);
             this.btn21.TabIndex = 0;
@@ -358,7 +370,7 @@
             this.btn19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn19.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn19.Location = new System.Drawing.Point(561, 0);
-            this.btn19.Margin = new System.Windows.Forms.Padding(2);
+            this.btn19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn19.Name = "btn19";
             this.btn19.Size = new System.Drawing.Size(50, 220);
             this.btn19.TabIndex = 0;
@@ -372,7 +384,7 @@
             this.btn17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn17.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn17.Location = new System.Drawing.Point(510, 0);
-            this.btn17.Margin = new System.Windows.Forms.Padding(2);
+            this.btn17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn17.Name = "btn17";
             this.btn17.Size = new System.Drawing.Size(50, 220);
             this.btn17.TabIndex = 0;
@@ -386,7 +398,7 @@
             this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn16.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn16.Location = new System.Drawing.Point(459, 0);
-            this.btn16.Margin = new System.Windows.Forms.Padding(2);
+            this.btn16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn16.Name = "btn16";
             this.btn16.Size = new System.Drawing.Size(50, 220);
             this.btn16.TabIndex = 0;
@@ -400,7 +412,7 @@
             this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn14.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn14.Location = new System.Drawing.Point(408, 0);
-            this.btn14.Margin = new System.Windows.Forms.Padding(2);
+            this.btn14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn14.Name = "btn14";
             this.btn14.Size = new System.Drawing.Size(50, 220);
             this.btn14.TabIndex = 0;
@@ -414,7 +426,7 @@
             this.btn12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn12.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn12.Location = new System.Drawing.Point(357, 0);
-            this.btn12.Margin = new System.Windows.Forms.Padding(2);
+            this.btn12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn12.Name = "btn12";
             this.btn12.Size = new System.Drawing.Size(50, 220);
             this.btn12.TabIndex = 0;
@@ -430,7 +442,7 @@
             this.btn10.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn10.Location = new System.Drawing.Point(290, 1);
-            this.btn10.Margin = new System.Windows.Forms.Padding(2);
+            this.btn10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn10.Name = "btn10";
             this.btn10.Size = new System.Drawing.Size(30, 128);
             this.btn10.TabIndex = 0;
@@ -446,7 +458,7 @@
             this.btn8.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn8.Location = new System.Drawing.Point(239, 1);
-            this.btn8.Margin = new System.Windows.Forms.Padding(2);
+            this.btn8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(30, 128);
             this.btn8.TabIndex = 0;
@@ -462,7 +474,7 @@
             this.btn6.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn6.Location = new System.Drawing.Point(188, 1);
-            this.btn6.Margin = new System.Windows.Forms.Padding(2);
+            this.btn6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(30, 128);
             this.btn6.TabIndex = 0;
@@ -478,7 +490,7 @@
             this.btn3.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn3.Location = new System.Drawing.Point(86, 1);
-            this.btn3.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(30, 128);
             this.btn3.TabIndex = 0;
@@ -494,7 +506,7 @@
             this.btn1.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn1.Location = new System.Drawing.Point(35, 1);
-            this.btn1.Margin = new System.Windows.Forms.Padding(2);
+            this.btn1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(30, 128);
             this.btn1.TabIndex = 0;
@@ -508,7 +520,7 @@
             this.btn11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn11.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn11.Location = new System.Drawing.Point(306, 0);
-            this.btn11.Margin = new System.Windows.Forms.Padding(2);
+            this.btn11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn11.Name = "btn11";
             this.btn11.Size = new System.Drawing.Size(50, 220);
             this.btn11.TabIndex = 0;
@@ -522,7 +534,7 @@
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.Location = new System.Drawing.Point(255, 0);
-            this.btn9.Margin = new System.Windows.Forms.Padding(2);
+            this.btn9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(50, 220);
             this.btn9.TabIndex = 0;
@@ -536,7 +548,7 @@
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.Location = new System.Drawing.Point(204, 0);
-            this.btn7.Margin = new System.Windows.Forms.Padding(2);
+            this.btn7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(50, 220);
             this.btn7.TabIndex = 0;
@@ -550,7 +562,7 @@
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.Location = new System.Drawing.Point(153, 0);
-            this.btn5.Margin = new System.Windows.Forms.Padding(2);
+            this.btn5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(50, 220);
             this.btn5.TabIndex = 0;
@@ -564,7 +576,7 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Location = new System.Drawing.Point(102, 0);
-            this.btn4.Margin = new System.Windows.Forms.Padding(2);
+            this.btn4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(50, 220);
             this.btn4.TabIndex = 0;
@@ -578,7 +590,7 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Location = new System.Drawing.Point(51, 0);
-            this.btn2.Margin = new System.Windows.Forms.Padding(2);
+            this.btn2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(50, 220);
             this.btn2.TabIndex = 0;
@@ -592,7 +604,7 @@
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn0.Font = new System.Drawing.Font("Bell MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.Location = new System.Drawing.Point(0, 0);
-            this.btn0.Margin = new System.Windows.Forms.Padding(2);
+            this.btn0.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(50, 220);
             this.btn0.TabIndex = 0;
@@ -601,27 +613,16 @@
             this.btn0.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn0.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(789, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 15);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "F1:鋼琴,F2:吉他,F3:小提琴,F4:小號";
-            // 
             // frmBeepPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 220);
+            this.ClientSize = new System.Drawing.Size(985, 220);
             this.Controls.Add(this.palMain);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(500, 200);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(500, 175);
             this.Name = "frmBeepPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "簡易電子琴";
@@ -629,6 +630,7 @@
             this.Load += new System.EventHandler(this.frmBeepPlayer_Load);
             this.SizeChanged += new System.EventHandler(this.frmBeepPlayer_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBeepPlayer_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmBeepPlayer_KeyUp);
             this.palMain.ResumeLayout(false);
             this.palMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbOctave)).EndInit();

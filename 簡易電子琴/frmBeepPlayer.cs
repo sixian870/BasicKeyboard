@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,6 +28,9 @@ namespace 簡易電子琴
         IntPtr midiHandle;
         int offset = 0;
         private Dictionary<Keys, int> keyMap = new Dictionary<Keys, int>();
+        private Dictionary<int, Button> buttonMap = new Dictionary<int, Button>();
+        private Dictionary<Button, Color> originalColors = new Dictionary<Button, Color>();
+        private HashSet<Keys> pressedKeys = new HashSet<Keys>(); //防止重複按鍵
 
         //public static extern bool Beep(int frequency, int duration);
         //int[] freq = { 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1046 };
@@ -272,10 +276,6 @@ namespace 簡易電子琴
             midiOutOpen(out midiHandle, 0, 0, 0, 0); // 打開預設合成器
 
             InitializeInstruments();
-            cboInstrument.SelectedIndexChanged += CboInstrument_SelectedIndexChanged;
-            cboInstrument.KeyDown += CboInstrument_KeyDown;
-            tkbOctave.ValueChanged += TkbOctave_ValueChanged;
-
             cboInstrument.SelectedValue = 0;
             ChangeInstrument(0);
 
@@ -287,7 +287,7 @@ namespace 簡易電子琴
                 {
                     this.initControl.Add(ctl.Name, new Rect(ctl.Left, ctl.Top, ctl.Width, ctl.Height));
                 }
-                if (ctl is Button)
+                /*if (ctl is Button )
                 {
                     ctl.Click += (s, args) => {
                         // 利用按鈕的 Tag 來對應頻率索引
@@ -296,6 +296,28 @@ namespace 簡易電子琴
                             PlayNote(idx);
                         }
                     };
+                }*/
+                if (ctl is Button btn)
+                {
+                    if (btn.Tag != null && int.TryParse(btn.Tag.ToString(), out int idx))
+                    {
+                        // 按鈕顏色與對應索引
+                        buttonMap[idx] = btn;
+                        originalColors[btn] = btn.BackColor;
+
+                        // MouseDown 變色 + 發聲
+                        btn.MouseDown += (s, args) => {
+                            HighlightButton(idx, true);
+                            PlayNote(idx);
+                        };
+
+                        // MouseUp 恢復原色
+                        btn.MouseUp += (s, args) => {
+                            HighlightButton(idx, false);
+                        };
+
+                        btn.PreviewKeyDown += (s, args) => { this.ActiveControl = null; };
+                    }
                 }
             }
         }
@@ -305,7 +327,7 @@ namespace 簡易電子琴
             if (cboInstrument.SelectedItem is InstrumentItem item)
             {
                 ChangeInstrument(item.Id);
-                this.ActiveControl = null; // 歸還焦點給主視窗
+                this.ActiveControl = null; // 歸還焦點
             }
         }
 
@@ -348,7 +370,15 @@ namespace 簡易電子琴
             // 鋼琴
             if (keyMap.ContainsKey(e.KeyCode))
             {
-                PlayNote(keyMap[e.KeyCode]);
+                if (!pressedKeys.Contains(e.KeyCode))
+                {
+                    pressedKeys.Add(e.KeyCode);
+                    int idx = keyMap[e.KeyCode];
+
+                    HighlightButton(idx, true); // 變色
+                    PlayNote(idx); // 發聲
+                }
+                e.Handled = true;
             }
 
             // 上下方向鍵移調(與 TrackBar 同步且不超過限制)
@@ -377,6 +407,19 @@ namespace 簡易電子琴
             }
         }
 
+        private void frmBeepPlayer_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (keyMap.ContainsKey(e.KeyCode))
+            {
+                // 標記該按鍵已放開
+                pressedKeys.Remove(e.KeyCode);
+
+                // 恢復顏色
+                int idx = keyMap[e.KeyCode];
+                HighlightButton(idx, false);
+            }
+        }
+
         private void frmBeepPlayer_SizeChanged(object sender, EventArgs e)
         {
             if (initWidth == 0) return;
@@ -391,6 +434,24 @@ namespace 簡易電子琴
                     ctl.Top = (int)(initControl[ctl.Name].Top * iRatioHeight);
                     ctl.Width = (int)(initControl[ctl.Name].Width * iRatioWith);
                     ctl.Height = (int)(initControl[ctl.Name].Height * iRatioHeight);
+                }
+            }
+        }
+
+        private void HighlightButton(int index, bool isPressed)
+        {
+            if (!buttonMap.ContainsKey(index)) return;
+            Button btn = buttonMap[index];
+
+            if (isPressed)
+            {
+                btn.BackColor = Color.Lavender;
+            }
+            else
+            {
+                if (originalColors.ContainsKey(btn))
+                {
+                    btn.BackColor = originalColors[btn];
                 }
             }
         }
